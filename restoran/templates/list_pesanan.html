@@ -1,0 +1,47 @@
+{% include 'restoTemplates.html' %}
+{% load static %}
+
+
+{% block content %}
+    <body>
+    <main class="w-screen min-h-screen flex pt-20 justify-center bg-gray-100 text-black">
+       <main class="flex flex-col w-[70vw] p-8 rounded-lg shadow-md bg-white relative">
+        <a href='/restoran/pesanan/ongoing' class="text-red-500 underline text-[18px]">lihat transaksi yang sedang berlangsung</a>
+        <h2 class="text-3xl font-semibold text-center text-violet-800 mb-20">Riwayat Transaksi Restoran<h2>
+            <div class="w-full flex flex-col gap-y-2">
+                {%if total == 0 %}
+                <h3 class="text-2xl font-semibold text-gray-700">Restoran tidak memiliki riwayat transaksi</h3>
+                {%else%}
+
+                <div class="flex justify-between items-center p-4 px-28 rounded-t-lg bg-blue-300 shadow-sm text-lg font-semibold">
+                    <p>Nama Pelanggan</p>
+                    <p>Waktu Pesanan dibuat</p>
+                    <p>Status Pesanan</p>
+                    <p>Aksi</p>
+                </div>
+
+                {%for pesanan in list_pesanan%}
+                    <div class="flex justify-between items-center p-4 px-28 rounded-lg bg-white shadow-sm text-lg font-semibold border-2 border-gray-500">
+                        <p class="w-1/4">{{pesanan.fname}} {{pesanan.lname}}</p>
+                        <p class="w-1/4">{{pesanan.datetime}}</p>
+                        <p class="w-1/4">{{pesanan.name}}</p>
+                        <form class="flex flex-col" METHOD="POST" action="{% url 'restoran:get_transaction_detail'  %}">
+                            <input class="hidden" id="email" value='{{pesanan.email}}' type="text" name="email"></input>
+                            <input class="hidden" id="time"  value='{{pesanan.datetime}}' type="text" name="time"></input>
+                            <input type="submit" value="detail" class=" hover:underline"></input>
+                        </form>
+                    
+                    </div>
+                {%endfor%}
+                {%endif%}
+            <div>
+       </main>
+       <script>
+        function goBack(){
+            window.history.back();
+        }
+    </script>
+    </main>
+</body>
+
+{% endblock %}

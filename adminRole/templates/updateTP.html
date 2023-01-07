@@ -1,0 +1,76 @@
+
+{% extends 'adminTemplates.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <style>
+        p {
+            text-align: center;
+        }
+
+
+        h2 {
+            font-size: 3em;
+            font-weight: bold;
+            color: black;
+        }
+        
+        label{
+            font-size: 12px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .card{
+            border-radius: 10px;
+            z-index: none;
+        }
+
+        
+        
+    </style>
+<body>
+      <div class="container" style="width: 100%; padding: 100px;">
+        <h2 style="text-align: center;">Tambah Tarif Pengiriman per  KM</h2>
+        <div class="card card-outline-secondary" style="margin: 50px">
+            <div class="card-body">
+              {% if valid == 0 %}
+                <p class="text-red-500" onLoad="noValid()">Input tidak boleh kosong</p>
+              {% endif %}
+              <form method="POST" class="form-horizontal" role="form" enctype="multipart/form-data" >
+                {% csrf_token %}
+              <div class="form-group">
+                <label class="col-lg-3 control-label text-weight-bold">Provinsi</label>
+                <div class="col-lg-8">
+                  {{ provinsi}}
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Tarif Motor</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" id="motor" name ="motor">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Tarif Mobil</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" id="car" name ="car" >
+                </div>
+              </div>
+              <button style="border: 0;" type="submit" class="btn" style="background-color: black;" onclick="location.href ='/admin-resto/daftar-tarif-pengiriman'" >Save</button>
+            </form>
+            </div>
+        </div>
+    </div>
+   
+
+    <script>
+        function noValid(){
+          alert("Input tidak boleh kosong")
+        };
+      
+      </script>  
+      
+{% endblock %}

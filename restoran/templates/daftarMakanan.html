@@ -1,0 +1,133 @@
+{% extends 'restoTemplates.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <style>
+        a {
+            color: white;
+        }
+
+        h3 {
+            font-size: 3em;
+            font-weight: bold;
+            color: black;
+        }
+        
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid #d2d2dc;
+            border-radius: 10px;
+        }
+        
+        btn{
+            font-size: 14px; 
+            background-color: black; 
+            color: white;
+        }
+        
+        .form-control {
+            border-radius: 20px;
+        }
+
+        
+        h2 {
+            font-size: 3em;
+            font-weight: bold;
+            color: black;
+        }
+
+        table { 
+        width: 800px; 
+        margin:10px auto;
+        justify-content: center;
+        }
+
+        /* Zebra striping */
+        tr:nth-of-type(odd) { 
+            background: #eee; 
+            }
+
+        th { 
+            background: white; 
+            color: black; 
+            font-weight: bold; 
+            }
+
+        td, th { 
+            padding: 10px; 
+            text-align: left; 
+            font-size: 18px;
+            }
+
+
+
+
+        </style>
+        
+</head>
+<body>
+    <div class="container" style="width: 100%; padding: 100px;">
+        <h2 style="text-align: center;">Daftar Makanan</h2>
+        <div class="card mb-5" style="margin:5vw; ">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="dataTable" width="100%" cellspacing="0" style="background-color: white;">
+                        <thead>
+                            <tr >
+                              <th>No</th>
+                              <th>Nama Makanan</th>
+                              <th>Deskripsi</th>
+                              <th>Stok</th>
+                              <th>Harga</th>
+                              <th>Kategori Makanan</th>
+                              <th>Bahan Makanan</th>
+                              <th>Aksi</th>
+                            </tr>
+                          </thead>
+                          {% for data in menu %}
+                          <tr>
+                              <td> {{ forloop.counter }}</td>
+                          <td> {{ data.foodname }}</td>
+                          <td> {{ data.description}}</td>
+                          <td>{{ data.stock }}</td>
+                          <td> {{ data.price }} </td>
+                          <td>{{ data.name}}</td>
+                            {% for i in listKategori %}
+                                {% if data.fcategory == i.id %}
+                                    <td>{{ i.name}}</td>
+                                {%endif%}
+                            {%endfor%}
+                            <td>
+                            {% for i in ingredients %}
+                                {% if data.foodname == i.foodname %}
+                                    {{ i.name}}
+                                {%endif%}
+                            {%endfor%}
+                            </td>
+                          <td> 
+                                <div>
+                                    <form method="POST" action="/restoran/menu/delete/">
+                                        <a class="btn btn-sm"  onclick="location.href ='/restoran/menu/{{ data.foodname }}/'"  style="background-color: black;color: white;"> Update</a>
+                                        <button class="btn btn-sm" name="foodname" value="{{data.foodname}}" type="submit" style="background-color: black;color: white;">Hapus</button>
+                                    </form>
+                                </div>
+                          </td>
+                          </tr>
+                          {%endfor%}
+                    
+                </table>
+                
+              </div>
+            </div>
+        </div>
+        </div>
+    
+    {% endblock %}
