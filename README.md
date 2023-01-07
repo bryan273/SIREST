@@ -1,12 +1,19 @@
-# Tugas Kelompok Basis Data
+# SIREST
 
-## SIREST
+## Deployment Link:
+
+https://sirest.up.railway.app/
+
+## Deskripsi
 
 Sirest merupakan layanan pesan-antar makanan secara online yang dapat bekerjasama dengan banyak mitra restoran. Aplikasi ini membantu para pelanggan untuk memesan makanan melalui mobile phone ataupun website tanpa perlu berkunjung ke restoran tersebut. Pelanggan dapat memilih menu yang diinginkannya dan kurir akan mengantarkannya.
 
 ## Home Page Sirest
 
 <img src="https://user-images.githubusercontent.com/88226713/211132375-07975b98-5eb4-497e-8dc6-6c8a4b4cfa08.jpg" width="600" height="300"/>
+
+## User Manual Guide
+User manual guide dapat diakses di link ini : [Guide](https://github.com/bryan273/SIREST/blob/main/User%20Manual%20Guide.pdf)
 
 ## Role Pengguna
 * Pelanggan
