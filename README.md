@@ -6,24 +6,24 @@ Sirest merupakan layanan pesan-antar makanan secara online yang dapat bekerjasam
 
 ## Home Page Sirest
 
-![Screenshot 2023-01-07 120608](https://user-images.githubusercontent.com/88226713/211132375-07975b98-5eb4-497e-8dc6-6c8a4b4cfa08.jpg)
+<img src="https://user-images.githubusercontent.com/88226713/211132375-07975b98-5eb4-497e-8dc6-6c8a4b4cfa08.jpg" width="600" height="300"/>
 
 ## Role Pengguna
 * Pelanggan
 
-Pelanggan dapat memesan makanan yang diinginkannya melalui mitra-mitra restoran yang tersedia
+  Pelanggan dapat memesan makanan yang diinginkannya melalui mitra-mitra restoran yang tersedia
 
 * Admin
 
-Admin memiliki otoritas dalam mengatur verifikasi pengguna, mengatur penambahan restoran dan makanan, serta mengatur promo dan perubahan kurir.
+  Admin memiliki otoritas dalam mengatur verifikasi pengguna, mengatur penambahan restoran dan makanan, serta mengatur promo dan perubahan kurir.
 
 * Kurir
 
-Kurir dapat menerima pesanan dari makanan yang dipesan pelanggan dan mengantarkannya ke tujuan pelanggan.
+  Kurir dapat menerima pesanan dari makanan yang dipesan pelanggan dan mengantarkannya ke tujuan pelanggan.
 
 * Restoran
 
-Restoran memiliki wewenang dalam mengatur makanan yang ingin dijual dan promo yang berlaku untuk pelanggan
+  Restoran memiliki wewenang dalam mengatur makanan yang ingin dijual dan promo yang berlaku untuk pelanggan
 
 ## Anggota
 
